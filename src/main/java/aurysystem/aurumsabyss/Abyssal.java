@@ -1,8 +1,10 @@
-package aurysystem.abyssal;
+package aurysystem.aurumsabyss;
 
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MushroomBlock;
 import net.minecraft.client.sound.MusicType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -42,9 +44,11 @@ public class Abyssal implements ModInitializer {
     public static final PlacedFeature GRASS_DELTA;
     public static final PlacedFeature MOSS_ROCK;
     public static final PlacedFeature PATCH_BERRY_UNDER;
+    public static final ConfiguredFeature<HugeFungusFeatureConfig, ?> RED_FUNGUS;
     static{
+        RED_FUNGUS = ConfiguredFeatures.register(MOD_ID+":red_fungus", Feature.HUGE_FUNGUS.configure(new HugeFungusFeatureConfig(Blocks.PODZOL.getDefaultState(), (BlockState)((BlockState)Blocks.MUSHROOM_STEM.getDefaultState().with(MushroomBlock.UP, false)).with(MushroomBlock.DOWN, false), (BlockState)Blocks.RED_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false), Blocks.SHROOMLIGHT.getDefaultState(), false)));
 
-        UNDERGROUND_MUSHROOMS = ConfiguredFeatures.register(MOD_ID+":underground_mushroom", Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM.withPlacement(new PlacementModifier[0]), 0.25F), new RandomFeatureEntry(TreeConfiguredFeatures.HUGE_RED_MUSHROOM.withPlacement(new PlacementModifier[0]), 0.25F)), VegetationConfiguredFeatures.PATCH_RED_MUSHROOM.withPlacement(new PlacementModifier[0]))));
+        UNDERGROUND_MUSHROOMS = ConfiguredFeatures.register(MOD_ID+":underground_mushroom", Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(List.of(new RandomFeatureEntry(TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM.withPlacement(new PlacementModifier[0]), 0.25F), new RandomFeatureEntry(RED_FUNGUS.withPlacement(new PlacementModifier[0]), 0.25F)), VegetationConfiguredFeatures.PATCH_RED_MUSHROOM.withPlacement(new PlacementModifier[0]))));
 
         GRASSY_DELTA = ConfiguredFeatures.register(MOD_ID+":grass_delta", Feature.WATERLOGGED_VEGETATION_PATCH.configure(new VegetationPatchFeatureConfig(BlockTags.LUSH_GROUND_REPLACEABLE.getId(), BlockStateProvider.of(Blocks.GRASS_BLOCK), () -> {
             return VegetationConfiguredFeatures.PATCH_WATERLILY.withPlacement(new PlacementModifier[0]);
@@ -65,6 +69,7 @@ public class Abyssal implements ModInitializer {
     public static final RegistryKey<Biome> WeirdCave = registerBiomeKey("strange_depths");
     @Override
     public void onInitialize() {
+        AbyssalBlocks.init();
         registerBiome(Abyssal.WeirdCave, Abyssal.createWeirdCaves());
         System.out.println("aaaaa");
     }

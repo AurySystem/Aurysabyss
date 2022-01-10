@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "abyssal",
+  "id": "aurumsabyss",
   "version": "${version}",
   "name": "abyssal",
   "description": "aaaa",
@@ -11,15 +11,15 @@
     "repo": "NA"
   },
   "license": "MIT",
-  "icon": "assets/abyssal/icon.png",
+  "icon": "assets/aurumsabyss/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "aurysystem.abyssal.Abyssal"
+      "aurysystem.aurumsabyss.Abyssal"
     ]
   },
   "mixins": [
-    "abyssal.mixins.json"
+    "aurumsabyss.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.12.4",

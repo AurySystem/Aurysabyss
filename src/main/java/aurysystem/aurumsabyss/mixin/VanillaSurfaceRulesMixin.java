@@ -1,11 +1,8 @@
-package aurysystem.abyssal.mixin;
+package aurysystem.aurumsabyss.mixin;
 
-import aurysystem.abyssal.Abyssal;
+import aurysystem.aurumsabyss.Abyssal;
 import com.google.common.collect.ImmutableList;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
@@ -13,8 +10,6 @@ import net.minecraft.world.gen.surfacebuilder.VanillaSurfaceRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
-import java.util.function.Consumer;
 
 @Mixin(VanillaSurfaceRules.class)
 public class VanillaSurfaceRulesMixin {

@@ -1,6 +1,6 @@
-package aurysystem.abyssal.mixin;
+package aurysystem.aurumsabyss.mixin;
 
-import aurysystem.abyssal.Abyssal;
+import aurysystem.aurumsabyss.Abyssal;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.TropicalFishEntity;

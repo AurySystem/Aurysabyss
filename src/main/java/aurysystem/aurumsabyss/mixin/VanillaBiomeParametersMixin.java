@@ -1,6 +1,6 @@
-package aurysystem.abyssal.mixin;
+package aurysystem.aurumsabyss.mixin;
 
-import aurysystem.abyssal.Abyssal;
+import aurysystem.aurumsabyss.Abyssal;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
