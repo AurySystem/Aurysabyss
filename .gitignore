@@ -14,3 +14,9 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 /run/
+run/config/fabric/indigo-renderer.properties
+run/config/fabric/indigo-renderer.properties
+.idea/modules/Aurysabyss.test.iml
+.idea/modules/Aurysabyss.main.iml
+.idea/modules/Aurysabyss.main.iml
+.idea/modules/Aurysabyss.test.iml

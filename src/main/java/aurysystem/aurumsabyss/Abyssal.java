@@ -1,5 +1,7 @@
 package aurysystem.aurumsabyss;
 
+import aurysystem.aurumsabyss.Blocks.AbyssalBlocks;
+import aurysystem.aurumsabyss.Items.AbyssalItems;
 import com.mojang.datafixers.util.Pair;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.BlockState;
@@ -70,6 +72,7 @@ public class Abyssal implements ModInitializer {
     @Override
     public void onInitialize() {
         AbyssalBlocks.init();
+        AbyssalItems.init();
         registerBiome(Abyssal.WeirdCave, Abyssal.createWeirdCaves());
         System.out.println("aaaaa");
     }
