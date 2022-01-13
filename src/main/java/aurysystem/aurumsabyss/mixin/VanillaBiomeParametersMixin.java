@@ -1,6 +1,7 @@
 package aurysystem.aurumsabyss.mixin;
 
 import aurysystem.aurumsabyss.Abyssal;
+import aurysystem.aurumsabyss.Worldgen.AbyssalBiomes;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
@@ -19,7 +20,7 @@ public class VanillaBiomeParametersMixin {
 
     @Inject(at = @At("HEAD"), method = "writeCaveBiomes")
     void writeCaveBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters, CallbackInfo ci) {
-        Abyssal.writeCaveBiomeParameters(parameters, MultiNoiseUtil.ParameterRange.of(-0.9F, 1.0F), Abyssal.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(-0.4F, 0.3F), Abyssal.DEFAULT_PARAMETER, Abyssal.DEFAULT_PARAMETER, 0.1F, Abyssal.WeirdCave);
-        Abyssal.writeCaveBiomeParameters(parameters, MultiNoiseUtil.ParameterRange.of(-0.9F, 1.0F), Abyssal.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(-0.9F, -0.2F), Abyssal.DEFAULT_PARAMETER, Abyssal.DEFAULT_PARAMETER, 0.2F, BiomeKeys.CRIMSON_FOREST);
+        AbyssalBiomes.writeCaveBiomeParameters(parameters, MultiNoiseUtil.ParameterRange.of(-0.9F, 1.0F), AbyssalBiomes.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(-0.4F, 0.3F), AbyssalBiomes.DEFAULT_PARAMETER, AbyssalBiomes.DEFAULT_PARAMETER, 0.1F, AbyssalBiomes.WeirdCave);
+        AbyssalBiomes.writeCaveBiomeParameters(parameters, MultiNoiseUtil.ParameterRange.of(-0.9F, 1.0F), AbyssalBiomes.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(-0.9F, -0.2F), AbyssalBiomes.DEFAULT_PARAMETER, AbyssalBiomes.DEFAULT_PARAMETER, 0.2F, BiomeKeys.CRIMSON_FOREST);
     }
 }

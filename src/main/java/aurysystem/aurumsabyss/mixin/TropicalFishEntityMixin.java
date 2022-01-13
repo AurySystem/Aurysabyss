@@ -1,6 +1,7 @@
 package aurysystem.aurumsabyss.mixin;
 
 import aurysystem.aurumsabyss.Abyssal;
+import aurysystem.aurumsabyss.Worldgen.AbyssalBiomes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.passive.TropicalFishEntity;
@@ -21,6 +22,6 @@ public class TropicalFishEntityMixin {
 
     @Inject(at = @At("RETURN"), method = "canTropicalFishSpawn", cancellable = true)
     private static void inject(EntityType<TropicalFishEntity> type, WorldAccess world, SpawnReason reason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(cir.getReturnValue() || (world.getFluidState(pos.down()).isIn(FluidTags.WATER) && (Objects.equals(world.getBiomeKey(pos), Optional.of(Abyssal.WeirdCave)))));
+        cir.setReturnValue(cir.getReturnValue() || (world.getFluidState(pos.down()).isIn(FluidTags.WATER) && (Objects.equals(world.getBiomeKey(pos), Optional.of(AbyssalBiomes.WeirdCave)))));
     }
 }

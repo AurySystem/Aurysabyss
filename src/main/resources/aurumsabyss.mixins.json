@@ -6,7 +6,9 @@
   "mixins": [
     "VanillaBiomeParametersMixin",
     "VanillaSurfaceRulesMixin",
-    "TropicalFishEntityMixin"
+    "TropicalFishEntityMixin",
+    "TrunkPlacerInvoker",
+    "FoliagePlacerInvoker"
   ],
   "client": [
   ],

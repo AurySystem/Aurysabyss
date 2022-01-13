@@ -1,6 +1,7 @@
 package aurysystem.aurumsabyss.mixin;
 
 import aurysystem.aurumsabyss.Abyssal;
+import aurysystem.aurumsabyss.Worldgen.AbyssalBiomes;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.BiomeKeys;
@@ -27,7 +28,7 @@ public class VanillaSurfaceRulesMixin {
                         )
         });
         MaterialRules.MaterialRule overworld = MaterialRules.sequence(new MaterialRules.MaterialRule[]{
-                MaterialRules.condition(MaterialRules.biome(Abyssal.WeirdCave),
+                MaterialRules.condition(MaterialRules.biome(AbyssalBiomes.WeirdCave),
                         MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR,MaterialRules.block(Blocks.PODZOL.getDefaultState())))
         });
         builder.add(MaterialRules.sequence(new MaterialRules.MaterialRule[]{nether,overworld}));
